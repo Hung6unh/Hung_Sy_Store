@@ -1,13 +1,50 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+<html lang="vi">
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laptop Hùng Sỹ</title>
+
+  <!-- N8N CHAT STYLE -->
+  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="module" src="/src/main.tsx"></script>
+
+  <!-- N8N CHATBOT -->
+  <script type="module">
+    import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+    createChat({
+      webhookUrl:
+        'https://hung28555.app.n8n.cloud/webhook/e94b9f66-7880-473f-981a-283c9544ac64/chat',
+
+      mode: 'window',
+
+      defaultLanguage: 'vi',
+
+      showWelcomeScreen: true,
+
+      initialMessages: [
+        'Xin chào 👋',
+        'Tôi là AI tư vấn Laptop Hùng Sỹ.'
+      ],
+
+      i18n: {
+        vi: {
+          title: 'HÙNG SỸ AI',
+          subtitle: 'Tư vấn laptop 24/7',
+          footer: '',
+          getStarted: 'Bắt đầu',
+          inputPlaceholder: 'Hỏi về laptop gaming, văn phòng...',
+        },
+      },
+    });
+  </script>
+</body>
+
+</html>
